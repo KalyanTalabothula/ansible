@@ -1,5 +1,5 @@
 - name: install and run nginx
-  hosts: Node
+  hosts: Node #case sensitive (n/N)
   become: yes
   tasks: 
     - name: install nginx package
