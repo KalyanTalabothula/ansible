@@ -1,0 +1,22 @@
+ #inventory-file means list of servers we can group them or we can keep them as a individual
+  
+192.187.5.30
+192.187.5.40
+
+
+[web]
+192.187.5.3
+192.187.5.4
+
+[web]
+192.187.5.5
+192.187.5.6
+
+[cart]
+192.187.5.7
+192.187.5.8
+
+[roboshop:children]
+web
+cart
+catalogue
