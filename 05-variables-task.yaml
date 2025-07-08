@@ -9,3 +9,9 @@
   - name: check variables
     ansible.builtin.debug:
       msg: "Hi, I am learning {{Course}}, Trainer is {{Trainer}}, Duration is {{Duration}}"
+  tasks:
+  - name: check variables
+    vars:
+      Course: "Devops with aws fabulously" 
+    ansible.builtin.debug:
+      msg: "Hi, I am learning {{Course}}, Trainer is {{Trainer}}, Duration is {{Duration}}"
