@@ -1,6 +1,6 @@
 
 - name: ping playbook
-  hosts: Node
+  hosts: node
  
   tasks:
     - name: ping the server
