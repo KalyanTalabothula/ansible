@@ -1,0 +1,13 @@
+- name: loops
+  hosts: localhost
+  tasks:
+  - name: print persons
+    ansible.builtin.debug:
+      msg: "Hello {{item}}" # item is a default keyword in ansible
+    loop: #list of values is given below
+    - Ramesh
+    - Suresh
+    - Robert
+    - Raheem
+
+    # it might be helpful in list of multiple packages to install

@@ -1,0 +1,12 @@
+- name: loops
+  hosts: localhost
+  become: yes # here we installing so need root access, so that's the reason we are writing become :yes
+  tasks:
+  - name: print persons
+    ansible.builtin.package:
+      name: "{{item}}"
+      state: present # item is a default keyword
+    loop:
+    - git
+    - mysql
+    - postfix

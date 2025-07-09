@@ -1,10 +1,10 @@
 - name: conditions
   hosts: localhost
-  become: yes
+  become: yes #create cheyali ante root kavali kabatti we become : yes
   tasks:
   - name: check roboshop user exists or not
-    ansible.builtin.command: id roboshop
-    register: user #user is a variable name
+    ansible.builtin.command: id roboshop # if no command is availible, then ansible is saying there is commond module. so e command o/p vachhesi e user ane varible lo print avutmdhi
+    register: user #user is a variable name. Error: vastumdhi no such user ani, yebdhuku ante usvally shellscript lo yenti ante erroe vaste adi stop/exit avvadu akkada, but migatavi adi yedi ina erroe vaste adi automatic gha exit/stop aae inka run avvadhu, so ikkada yenti ante user unnada leda ani check chestunnam, user ledu kabatti, not to eit continuoe ani manam ignore ane command/module rastunnam ekkada stop avvakuda ansible run avvu ani. 
     ignore_errors: true # ansilbe will not exit even it got error
   
   - name: print variable value
@@ -13,9 +13,9 @@
   
   - name: print exit status or return code
     ansible.builtin.debug:
-      msg: "status is: {{user.rc}}"
+      msg: "status is: {{user.rc}}" #rc->Return code means like exit status ($?) --> 0 means success, if not failure
 
   - name: create user
     ansible.builtin.user:
       name: roboshop
-    when: user.rc != 0 #condition
+    when: user.rc != 0 #condition and when is command in ansible
