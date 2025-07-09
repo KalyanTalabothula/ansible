@@ -1,8 +1,10 @@
+# (-) denotes list, if it is not there infront then it is MAP
+
 - name: checking data types
   hosts: localhost
   vars:
     NAME: Sivakumar # key value
-    Skills: #Skills is a list type value
+    Skills: #Skills is a list type value 
     - DevOps
     - Shell
     - ANsible
